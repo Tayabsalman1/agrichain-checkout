@@ -1,6 +1,8 @@
 #Entry point for the scanned items:
 import re
 
+from checkout import Checkout
+
 if __name__ =="__main__":
     #looping for getting scanned items 
     print(
@@ -16,8 +18,10 @@ if __name__ =="__main__":
             print("Enter new sequence: ")
             scanned_items = input()
             if re.match("^[a-zA-Z]+$", scanned_items):
-                print(type(scanned_items))
                 print(f"Scanned items are {scanned_items}")
+                obj = Checkout()
+                obj.scan_items(scanned_items.upper())
+
             else:
                 print("Enter only Alphabetic sequence")
         else:
