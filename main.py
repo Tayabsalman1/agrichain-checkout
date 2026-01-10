@@ -21,6 +21,7 @@ if __name__ =="__main__":
                 print(f"Scanned items are {scanned_items}")
                 obj = Checkout()
                 obj.scan_items(scanned_items.upper())
+                print(f"\nCheckout Total:{obj.checkout_total}")
 
             else:
                 print("Enter only Alphabetic sequence")
