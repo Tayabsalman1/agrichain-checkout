@@ -1,7 +1,12 @@
-#Entry point for the scanned items:
 import re
 
 from checkout import Checkout
+
+"""
+Entry point for the scanned items:
+This file allows to interact with the implemented logic of checkout and pricing discounts
+If any scanned item does not exists in the configuration then an exception arises resulting end of looping
+"""
 
 if __name__ =="__main__":
     #looping for getting scanned items 

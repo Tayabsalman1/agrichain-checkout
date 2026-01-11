@@ -8,7 +8,6 @@ class PricingRules:
     def calculate_price(self, unit_count):
         
         #Sorting offers to get max quantity first
-        print(self.unit_offers)
         offers = sorted(self.unit_offers, key=lambda x: x.get("quantity"), reverse=True)
 
         #Applying Offers to get offer related prices for applicable quantities
@@ -24,6 +23,3 @@ class PricingRules:
             offer_unit_price += remaining_unit_count * self.unit_price
         
         return offer_unit_price
-
-
-
