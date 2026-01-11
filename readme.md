@@ -42,8 +42,8 @@ agrichain-checkout/
 ├── checkout.py
 ├── pricing_rule.py
 ├── offer.py
-├── config_loader.py
-├── pricing_config.json
+├── price_configuration.py
+├── pricing_configuration.json
 ├── main.py
 └── tests/
 ```
