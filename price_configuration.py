@@ -1,4 +1,6 @@
 import json
+from pricing_rules import PricingRules
+from offer import Offer
 
 def load_price_configuration(items):
     pricing_dict = {}
@@ -11,7 +13,14 @@ def load_price_configuration(items):
         if item not in pricing_dict:
             missing_pricing.append(item)
             continue
-        selective_pricing[item] = pricing_dict[item]
+        
+        if "offers" not in pricing_dict[item]:
+            pricing_dict[item]["offers"] = []
+        
+        selective_pricing[item] = PricingRules(
+            unit_price=pricing_dict[item]["unit_price"],
+            offers=[Offer(quantity=off.get("quantity"), price=off.get("price")) for off in pricing_dict[item]["offers"]]
+        ) 
     
     if missing_pricing:
         raise Exception(f"Pricing not configured for items {', '.join(missing_pricing)}. Pls Update config")

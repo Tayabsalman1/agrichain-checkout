@@ -21,9 +21,7 @@ class Checkout:
         #GEtting price of each item, by applying offers if any
         item_total = 0
         for item in self.scanned_items:
-            item_pricing_config = self.pricing_config[item]
-            pricing_obj = PricingRules(unit_price=item_pricing_config["unit_price"], offers=[] if "offers" not in item_pricing_config else item_pricing_config["offers"])
-            item_total += pricing_obj.calculate_price(self.scanned_items[item])
+            item_total += self.pricing_config[item].calculate_price(self.scanned_items[item])
         
         self.checkout_total = item_total
     
