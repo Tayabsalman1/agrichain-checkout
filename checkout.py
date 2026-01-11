@@ -10,7 +10,7 @@ class Checkout:
     def scan_items(self, items):
         
         # Aggregate the scammed items to get counts
-        for item in items:
+        for item in items.upper():
             if item in self.scanned_items:
                 self.scanned_items[item] += 1
             else:

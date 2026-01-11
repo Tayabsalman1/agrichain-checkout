@@ -20,7 +20,7 @@ if __name__ =="__main__":
             if re.match("^[a-zA-Z]+$", scanned_items):
                 print(f"Scanned items are {scanned_items}")
                 obj = Checkout()
-                obj.scan_items(scanned_items.upper())
+                obj.scan_items(scanned_items)
                 print(f"\nCheckout Total:{obj.checkout_total}")
 
             else:
