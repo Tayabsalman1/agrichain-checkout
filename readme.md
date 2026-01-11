@@ -57,12 +57,27 @@ python main.py
 ```
 ---
 
+## Dependencies
+The project uses the following testing dependencies:
+
+- **pytest** – for unit testing
+- **pytest-html** – for generating HTML test reports (optional)
+
+Install dependencies using:
+
+```bash
+pip install pytest pytest-html
+```
+---
+
 ## Testing
 All examples from the assignemnt are covered using unit tests.
 
 ```bash
 pytest -v --html=tests/test_report.html
 ```
+The result of test cases running will be save in the test/test_report.html  
+You can open the file in the browser to view the results.  
 
 ## Assumptions
 - Input contains valid SKUs
